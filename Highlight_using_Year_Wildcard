@@ -1,0 +1,90 @@
+Sub highlight_older_tables_for_deletion()
+    Dim x As Integer
+    For x = 2 To 1001
+
+        'first set up the years to be kept as transparent
+        If Range("B" & x).Value Like "*21*" Then
+                Range("B" & x).Interior.ColorIndex = xlNone
+        
+        ElseIf Range("B" & x).Value Like "*22*" Then
+                Range("B" & x).Interior.ColorIndex = xlNone
+
+        
+        ElseIf Range("B" & x).Value Like "*23*" Then
+                Range("B" & x).Interior.ColorIndex = xlNone
+
+        'after all years that are for keep, the remainder get colour-coded on the specific year
+        Else:
+    
+            '2004
+            If Range("B" & x).Value Like "*04*" Then 
+                Range("B" & x).Interior.Color = RGB(230, 25, 75)
+
+            '2005
+            ElseIf Range("B" & x).Value Like "*05*" Then 
+                Range("B" & x).Interior.Color = RGB(60, 180, 75)
+
+            '2006
+            ElseIf Range("B" & x).Value Like "*06*" Then 
+                Range("B" & x).Interior.Color = RGB(255, 225, 25)
+
+            '2007
+            ElseIf Range("B" & x).Value Like "*07*" Then 
+                    Range("B" & x).Interior.Color = RGB(0, 130, 200)
+
+            '2008
+            ElseIf Range("B" & x).Value Like "*08*" Then 
+                Range("B" & x).Interior.Color = RGB(245, 130, 48)
+
+            '2009
+            ElseIf Range("B" & x).Value Like "*09*" Then 
+                Range("B" & x).Interior.Color = RGB(145, 30, 180)
+
+            '2010
+            ElseIf Range("B" & x).Value Like "*10*" Then 
+                    Range("B" & x).Interior.Color = RGB(70, 240, 240)
+
+            '2011
+            ElseIf Range("B" & x).Value Like "*11*" Then 
+                    Range("B" & x).Interior.Color = RGB(240, 50, 230)
+                
+            '2012
+            ElseIf Range("B" & x).Value Like "*12*" Then 
+                    Range("B" & x).Interior.Color = RGB(210, 245, 60)
+
+            '2013
+            ElseIf Range("B" & x).Value Like "*13*" Then 
+                    Range("B" & x).Interior.Color = RGB(250, 190, 212)
+
+            '2014
+            ElseIf Range("B" & x).Value Like "*14*" Then 
+                    Range("B" & x).Interior.Color = RGB(0, 128, 128)
+
+            '2015
+            ElseIf Range("B" & x).Value Like "*15*" Then 
+                    Range("B" & x).Interior.Color = RGB(220, 190, 255)
+
+            '2016
+            ElseIf Range("B" & x).Value Like "*16*" Then 
+                    Range("B" & x).Interior.Color = RGB(170, 110, 40)
+                    
+            '2017
+            ElseIf Range("B" & x).Value Like "*17*" Then 
+                    Range("B" & x).Interior.Color = RGB(255, 250, 200)
+                    
+            '2018
+            ElseIf Range("B" & x).Value Like "*18*" Then 
+                    Range("B" & x).Interior.Color = RGB(128, 0, 0)
+                    
+            '2019
+            ElseIf Range("B" & x).Value Like "*19*" Then 
+                    Range("B" & x).Interior.Color = RGB(170, 255, 195)
+                    
+            '2020
+            ElseIf Range("B" & x).Value Like "*20*" Then 
+                    Range("B" & x).Interior.Color = RGB(128, 128, 0)  
+
+            End If
+        End IF
+    Next x   
+End Sub
