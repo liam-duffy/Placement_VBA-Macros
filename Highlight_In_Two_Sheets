@@ -1,0 +1,17 @@
+Sub Highlight_Comparing_2sheetsColumn()
+    Dim Last_sheet1_Row As Long
+    Dim Last_sheet2_Row As Long
+        Dim i As Integer
+        Dim j As Integer
+            Last_sheet1_Row = Sheets("sheet1").Cells(Rows.Count, "A").End(xlUp).Row
+            Last_sheet2_Row = Sheets("sheet2").Cells(Rows.Count, "A").End(xlUp).Row
+                For i = 2 To Last_sheet1_Row
+                For j = 2 To Last_sheet2_Row
+                    If Sheets("sheet1").Cells(i, 1).Value = Sheets("sheet2").Cells(j, 1).Value And _
+                    Sheets("sheet1").Cells(i, 1).Value = Sheets("sheet2").Cells(j, 1).Value Then
+                    Sheets("sheet2").Cells(j, 1).Font.Color = rgbRed
+                    Sheets("sheet2").Cells(j, 1).Copy Sheets("sheet1").Cells(i, 1)
+                    End If
+                Next j
+                Next i
+End Sub
